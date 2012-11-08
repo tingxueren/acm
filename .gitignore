@@ -2,4 +2,5 @@
 .*.swo
 .*.swn
 *.out
+*.in
 *.exe
