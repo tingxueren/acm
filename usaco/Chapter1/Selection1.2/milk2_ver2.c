@@ -75,9 +75,22 @@ int main()
 	//	printf("milk[0][%d] = %d, mikl[1][%d] = %d \n", i, milk[0][i], i, milk[1][i]);
 	
 	int start, end;
-	start = milk[]
-	for (i = 0; i < n; ++i) {
-		
+	start = milk[0][0];
+	end = milk[1][0];
+	invertal1 = end - start;
+	invertal2 = 0;
+	tmp2 = 0;
+
+	for (i = 1; i < num; ++i) {
+		if (milk[0][i] <= end && milk[1][i] > end)
+			end = milk[1][i];
+		if (milk[0][i] > end) {
+			tmp2 = milk[0][i] - end;
+			start = milk[0][i];
+			end = milk[1][i];
+		}
+		invertal1 = max(invertal1, (end - start));
+		invertal2 = max(invertal2, tmp2); 
 	}
 
 	//printf("%d %d\n", invertal1, invertal2);
